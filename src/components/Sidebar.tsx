@@ -23,8 +23,8 @@ export function Sidebar({ sessions, active, collapsed, disabled, onToggle, onCre
         {collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}
       </button>
     </div>
-    <button className="new-conversation" disabled={disabled} onClick={onCreate} title="新建对话">
-      <Plus size={17} />{!collapsed && <><span>新建对话</span><kbd>⌘ N</kbd></>}
+    <button className="new-conversation" disabled={disabled} onClick={onCreate} title="新建对话 (⌘N)" aria-label="新建对话">
+      <Plus size={17} />{!collapsed && <span>新建对话</span>}
     </button>
     {!collapsed && <label className="session-search"><Search size={15} /><input placeholder="搜索会话" value={search} onChange={(event) => setSearch(event.target.value)} aria-label="搜索会话" />{search && <button onClick={() => setSearch("")} aria-label="清除搜索">×</button>}</label>}
     <div className="session-list" aria-label="已保存会话" style={{ gap: 2 }}>
